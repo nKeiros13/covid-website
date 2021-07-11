@@ -5,10 +5,12 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req,res)=>{
-    res.send("You're viewing STATS PAGE!");
+    //THIS PAGE DISPLAYS THE INDEX
+    res.render('stats/index');
 })
 router.get('/:cName', (req,res)=>{
     const { cName } = req.params;
+    //THIS PAGE DISPLAYS THE STATS REGARDING A PARTICULAR COUNTRY. cName IS COUNTRY-NAME
     res.send(`You're viewing STATS page for ${cName}.`);
 })
 
