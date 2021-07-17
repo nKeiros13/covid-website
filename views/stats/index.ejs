@@ -1,3 +1,25 @@
 <% layout('layouts/boilerplate') %>
 
-<center><h2>OUR CODES GOES HERE!</h2></center>
+<!-- style="max-width: 500px; margin: auto" -->
+<div class="container">
+  <div>
+    <ul style="list-style-type: none">
+      <% for(let data of Data) { %>
+      <li>
+        <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title"><%= data.state %></h5>
+            <p class="card-text">
+              Positive: <%= data.positive %> | Deaths: <%= data.death %>
+              Cumulative Hospitilized: <%= data.hospitalizedCumulative %>
+              Currently Hospitalized: <%= data.hospitalizedCurrently %> <br />
+              Last Updated: <%= data.lastUpdateEt %>
+            </p>
+          </div>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
