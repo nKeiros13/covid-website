@@ -6,7 +6,7 @@ const router = express.Router();
 const axios = require('axios');
 
 
-
+// DONOT PREFIX ANY ROUTE WITH STATS. LOOK UP MAIN INDEX.JS 
 
 router.get('/', async (req,res)=>{
     //THIS PAGE DISPLAYS THE INDEX
