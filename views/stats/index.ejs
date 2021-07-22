@@ -1,12 +1,12 @@
 <% layout('layouts/boilerplate') %>
 <!-- style="max-width: 500px; margin: auto" -->
-<div class="container">
+<div class="container" >
 	<div>
-		<ul style="list-style-type: none">
+		<div style="list-style-type: none; display:grid; grid-template-columns:repeat(3, 200px); gap:20px;">
 			<% for(let data of Data) { %> <% let stateName; %> <% for(let state of
 			states) { %> <% if(data.state === state.abbreviation) {%> <% stateName =
 			state.name; break; }} %>
-			<li>
+			<div>
 				<div class="card" style="width: 18rem">
 					<img src="..." class="card-img-top" alt="..." />
 					<div class="card-body">
@@ -19,7 +19,7 @@
 						</p>
 					</div>
 				</div>
-			</li>
+			</div>
 			<% } %>
 		</ul>
 	</div>
