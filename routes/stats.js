@@ -20,6 +20,18 @@ const getData = async () => {
 	}
 };
 
+const findStateByName = (sName, Data) => {
+	for (let state of states) {
+		if (sName === state.name) {
+			for (let data of Data) {
+				if (state.abbreviation === data.state) {
+					return { data, state };
+				}
+			}
+		}
+	}
+};
+
 // DONOT PREFIX ANY ROUTE WITH STATS. LOOK UP MAIN INDEX.JS
 
 router.get("/", async (req, res) => {
@@ -32,16 +44,8 @@ router.get("/:sName", async (req, res) => {
 	let { sName } = req.params;
 	sName = sName.charAt(0).toUpperCase() + sName.slice(1); //Capitalize first letter.
 	const Data = await getData();
-	for (let state of states) {
-		if (sName === state.name) {
-			for (let data of Data) {
-				if (state.abbreviation === data.state) {
-					res.render("stats/show", { data, state });
-				}
-			}
-			break;
-		}
-	}
+	const { data, state } = findStateByName(sName, Data);
+	res.render("stats/show", { data, state });
 });
 
 module.exports = router;
