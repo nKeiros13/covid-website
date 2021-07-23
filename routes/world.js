@@ -37,6 +37,6 @@ router.get("/:cName", async (req, res) => {
 	let { cName } = req.params;
 	cName = cName.charAt(0).toUpperCase() + cName.slice(1); //Capitalize first letter.
 	
-};);
+});
 
 module.exports = router;

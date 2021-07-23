@@ -1,47 +1,29 @@
 <% layout('layouts/boilerplate') %>
 <!-- style="max-width: 500px; margin: auto" -->
-<div class="container">
-	<div class="row">
-		<div class="col-3 my-3 py-2">
-			<h5>Quick Access</h5>
-			<ul>
-			<% for(let state of states) { %>
-				<li> <a href="/stats/<%= state.name %> "><%= state.name %>(<%= state.abbreviation %> ) </a></li>
-				<% } %> 
+<div class="container" style="padding-left:1.5rem;margin-left:0rem">
+	
+		
+		
+<div class="container" style="display:grid; grid-template-columns:25% 60%;padding-top:3rem">
+	<div >
+		<h5>Quick Access</h5>
+		<ul style="list-style: none; padding-left:0; padding-right:0.4rem">
+		<% for(let state of states) { %>
+			<li style=" margin-top:0.2rem"></li> <button onclick="location.href = '/stats/<%= state.name %>';"  style="text-decoration: none;color: white; padding:0.3rem; width:90%;background-color:grey;text-align:left; border:none; box-shadow:none;"><%= state.name %>(<%= state.abbreviation %>) </button></li>
+			<% } %> 
 		</div>
-		<div class="col-9 my-3 py-2">
-			<ul style="list-style-type: none">
-				<% for(let data of Data) { %> <% let stateName; %> <% for(let state of
-				states) { %> <% if(data.state === state.abbreviation) {%> <% stateName =
-				state.name; break; }} %>
-				<li class="py-1">
-					<div class="card" style="width: 18rem">
-						<img src="..." class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title"><%= stateName %> (<%= data.state %>)</h5>
-							<p class="card-text">
-								Positive: <%= data.positive %> | Deaths: <%= data.death %>
-								Cumulative Hospitilized: <%= data.hospitalizedCumulative %>
-								Currently Hospitalized: <%= data.hospitalizedCurrently %> <br />
-								Last Updated: <%= data.lastUpdateEt %>
-							</p>
-						</div>
-					</div>
-				</li>
-				<% } %>
-			</ul>
-		</div>
-<div class="container" >
-	<div>
-		<div style="list-style-type: none; display:grid; grid-template-columns:repeat(3, 200px); gap:20px;">
+	<div >
+		
+		
+		<div style="list-style-type: none; display:grid; grid-template-columns:repeat(3, 18rem); gap: 1rem;">
 			<% for(let data of Data) { %> <% let stateName; %> <% for(let state of
 			states) { %> <% if(data.state === state.abbreviation) {%> <% stateName =
 			state.name; break; }} %>
 			<div>
-				<div class="card" style="width: 18rem">
-					<img src="..." class="card-img-top" alt="..." />
+				<div class="card" style="width: 18rem; height: 11rem">
+					
 					<div class="card-body">
-						<h5 class="card-title"><%= stateName %> (<%= data.state %>)</h5>
+						<a class="card-title" href="/stats/<%= stateName %> " style="text-decoration:none; color:black; font-size:larger; font-weight:bold"><%= stateName %> (<%= data.state %>)</a>
 						<p class="card-text">
 							Positive: <%= data.positive %> | Deaths: <%= data.death %>
 							Cumulative Hospitilized: <%= data.hospitalizedCumulative %>

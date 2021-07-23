@@ -26,6 +26,7 @@ const findStateByName = (sName, Data) => {
 		if (sName === state.name) {
 			for (let data of Data) {
 				if (state.abbreviation === data.state) {
+					
 					return { data, state };
 				}
 			}
