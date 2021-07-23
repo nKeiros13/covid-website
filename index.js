@@ -3,7 +3,6 @@ const express = require("express");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const path = require("path");
-const axios = require("axios");
 
 const statRoutes = require("./routes/stats");
 const leadRoutes = require("./routes/leads");
