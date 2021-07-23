@@ -11,6 +11,7 @@ const getData = async () => {
 		let rawInfo = await axios.get(
 			"https://api.covidtracking.com/v1/states/current.json"
 		);
+		// console.log(rawInfo);
 		console.log("Successfully got data!");
 		rawInfo = rawInfo.data;
 		return rawInfo;
