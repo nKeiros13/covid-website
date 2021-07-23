@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+
+
+
+
+
+
+<% for(let data of Data) { %> 
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin: auto;
+                                    text-align: center;
+                                    width: 50%;
+                                    padding: 10px;">
+            <h1>World Covid Data</h1>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>
+                    <h1>Confirmed : <%= data.confirmed %></h1>
+                    <h2>Recovered : <%= data.recovered %></h2>
+                </p>
+            </div>
+            <div class="col-4">
+                <p>
+                    <h2>Deaths : <%= data.deaths %></h2>
+                </p>
+                <p>
+                    <h4>Critical : <%= data.critical %></h4>
+                </p>
+            </div>
+            <div class="col-2">
+                <p>
+                    Last Changed : <%= data.lastChange %>
+                    Last Updated : <%= data.lastUpdate %>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+
+
+
+
