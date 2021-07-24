@@ -15,11 +15,41 @@ let options = {
 	},
 };
 
+let countryOptions = {
+	method: "GET",
+	url: "https://covid-19-data.p.rapidapi.com/country",
+	params: { name: "italy" },
+	headers: {
+		"x-rapidapi-key": "7031c91018msh98fbccce7eac202p1cda26jsn5823e0a1f254",
+		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+	},
+};
+
+axios
+	.request(options)
+	.then(function (response) {
+		console.log(response.data);
+	})
+	.catch(function (error) {
+		console.error(error);
+	});
+
+const getCountryDataByName = async () => {
+	try {
+		let rawInfo = await axios.request(countryOptions);
+		console.log(rawInfo);
+		return rawInfo.data;
+	} catch (e) {
+		console.log("Error--");
+		console.log(e);
+	}
+};
+
 const getData = async () => {
 	try {
 		let rawInfo = await axios.request(options);
 		// console.log(rawInfo);
-		console.log(countries);
+		// console.log(countries);
 		return rawInfo.data;
 	} catch (error) {
 		console.log(error);
@@ -36,7 +66,13 @@ router.get("/", async (req, res) => {
 router.get("/:cName", async (req, res) => {
 	let { cName } = req.params;
 	cName = cName.charAt(0).toUpperCase() + cName.slice(1); //Capitalize first letter.
+<<<<<<< Updated upstream
 	
+=======
+	console.log(cName);
+	let Data = await getCountryDataByName();
+	res.render("world/show", { Data });
+>>>>>>> Stashed changes
 });
 
 module.exports = router;
