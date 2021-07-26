@@ -48,8 +48,6 @@ const getCountryDataByName = async () => {
 const getData = async () => {
 	try {
 		let rawInfo = await axios.request(options);
-		// console.log(rawInfo);
-		// console.log(countries);
 		return rawInfo.data;
 	} catch (error) {
 		console.log(error);
@@ -66,13 +64,9 @@ router.get("/", async (req, res) => {
 router.get("/:cName", async (req, res) => {
 	let { cName } = req.params;
 	cName = cName.charAt(0).toUpperCase() + cName.slice(1); //Capitalize first letter.
-<<<<<<< Updated upstream
-	
-=======
 	console.log(cName);
 	let Data = await getCountryDataByName();
 	res.render("world/show", { Data });
->>>>>>> Stashed changes
 });
 
 module.exports = router;
