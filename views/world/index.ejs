@@ -38,17 +38,17 @@
     <div class="row">
         <div class="col-6 py-4 my-2" style="margin: auto; text-align: center;">
             <h5>To search by country name</h5>
-            <form action="/world/country" method="POST">
+            <form action="/world/country" method="GET">
                 <label for="cName">Country Name: </label>
                 <input type="text" name="cName" id="cName" placeholder="first letter of country name should be capitalized. A little respect here and there makes all the difference.">
             </form>
+            <ul>
+                <% for(let c of countries){ %>
+                   <a href="/world/<%= c.country %>"><li><%= c.country %> </li></a>
+                <% } %>  
+            </ul>
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
