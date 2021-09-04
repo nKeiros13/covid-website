@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-3">
+			<ul>
+				<% for(let items in Data){ %>
+				<li><a href="/india/<%= items %> "><%= items %> </a></li>
+				<% } %>
+			</ul>
+		</div>
+		<div class="col-6">
+			<h2>Index page for stats for India.</h2>
+		</div>
+		<div class="col-3"></div>
+	</div>
+</div>

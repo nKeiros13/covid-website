@@ -7,7 +7,7 @@ const path = require("path");
 const statRoutes = require("./routes/stats");
 const leadRoutes = require("./routes/leads");
 const worldRoutes = require("./routes/world");
-const State = require("./models/states");
+const indiaRoutes = require("./routes/india");
 
 //-----------------------------------------------------------------------------------------------------------//
 //MONGOOSE SETUP AND MONGO DB GOES HERE
@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/stats", statRoutes);
 app.use("/leads", leadRoutes);
 app.use("/world", worldRoutes);
+app.use("/india", indiaRoutes);
 //----------------------------------------------------------------------------------------------------------//
 
 app.get("/", (req, res) => {

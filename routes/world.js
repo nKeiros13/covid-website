@@ -46,7 +46,7 @@ const getData = async () => {
 // DONOT PREFIX ANY ROUTE WITH WORLD. LOOK UP MAIN INDEX.JS
 router.get("/", async (req, res) => {
 	const Data = await getData();
-	console.log(countries);
+	// console.log(countries);
 	res.render("world/index", { Data, countries });
 });
 

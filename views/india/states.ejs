@@ -1,0 +1,16 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<h1><%= sAbbr %></h1>
+			<% for(let item in Data[sAbbr].total) {%>
+			<ul>
+				<li><%= item %> - <%= Data[sAbbr].total[item] %></li>
+			</ul>
+			<% } %>
+		</div>
+		<div class="col-3"></div>
+	</div>
+</div>
